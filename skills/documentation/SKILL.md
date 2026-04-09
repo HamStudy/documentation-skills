@@ -1,5 +1,5 @@
 ---
-name: documentation-restructure
+name: documentation
 description: >
   Skill for writing, structuring, reviewing, and reformatting technical documentation.
   Use this skill whenever the user asks to write new documentation pages, restructure or
