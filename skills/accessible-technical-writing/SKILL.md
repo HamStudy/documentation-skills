@@ -109,7 +109,7 @@ All reference files are in the `references/` directory.
 | `structure-and-flow.md` | ABT/SCQA/BLUF openers, engagement architecture, transitions, callbacks, foreshadowing, motivation patterns, the "therefore/but" diagnostic | Drafting, fixing weak openings, improving flow |
 | `voice-and-style.md` | Plain language rules, non-condescension formula, sentence rhythm, Williams/Klinkenborg/Zinsser principles, nominalization detection, old-before-new | Editing for tone, clarity, and sentence quality |
 | `analogies-and-accuracy.md` | Analogy mapping rules, illustration vs. assertion, SIFT verification, anti-fabrication rules, sourcing standards | Writing or reviewing analogies and factual claims |
-| `review-passes.md` | The 5-pass review workflow, CDC Clear Communication Index, readability targets, agent prompts for each pass | Any review or editing task |
+| `review-passes.md` | The 7-pass review workflow, CDC Clear Communication Index, readability targets, agent prompts for each pass | Any review or editing task |
 | `anti-patterns.md` | AI cliché taxonomy, literal-instruction traps, monotonous structure, banned phrases, repetition detection | Checking for AI artifacts or improving naturalness |
 
 ---
@@ -130,18 +130,25 @@ The passes, in order:
    per section. Don't self-edit. Default section pattern: BLUF sentence → segmented
    explanation (3–7 chunks) → worked example → check question.
 
-3. **Clarity and audience pass** — Check main message placement, single-idea paragraphs,
+3. **Structure and engagement pass** — Verify the reader feels motivated to learn each
+   concept before the explanation arrives. Run the "therefore or but" diagnostic on
+   section connections. Check for callbacks, foreshadowing, and bridges. Flag any
+   meta-commentary motivation ("Why should we care...?") and replace with embedded
+   motivation (problem-first, stakes-through-story, what-breaks-without-it, or
+   curiosity-first). Verify opening frameworks vary across consecutive sections.
+
+4. **Clarity and audience pass** — Check main message placement, single-idea paragraphs,
    and overall comprehensibility. Use CDC Clear Communication Index criteria.
 
-4. **Style and voice pass** — Apply plain language rules, check sentence rhythm and
+5. **Style and voice pass** — Apply plain language rules, check sentence rhythm and
    variety, remove clichés and AI artifacts, verify conversational tone without
    condescension. Check for nominalizations and convert to verbs.
 
-5. **Accuracy and sourcing pass** — Label every factual assertion ([A] common knowledge,
+6. **Accuracy and sourcing pass** — Label every factual assertion ([A] common knowledge,
    [B] defined earlier, [C] derived from calculation, [D] requires source). Flag
    unverified anecdotes and quote-like text. Apply SIFT verification to [D] items.
 
-6. **Reader validation pass** — Simulate a novice reader. For each section, answer:
+7. **Reader validation pass** — Simulate a novice reader. For each section, answer:
    "What is the point?", "What should I remember?", "What would I Google to learn more?"
    Flag any section where these can't be answered after one read.
 

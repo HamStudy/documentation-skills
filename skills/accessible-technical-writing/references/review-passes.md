@@ -9,12 +9,13 @@ overexplaining, tonal wobble, and fabrication sneak in.
 1. [Why separate passes](#why-separate-passes)
 2. [Pass 1: Blueprint](#pass-1-blueprint)
 3. [Pass 2: Drafting](#pass-2-drafting)
-4. [Pass 3: Clarity and audience](#pass-3-clarity-and-audience)
-5. [Pass 4: Style and voice](#pass-4-style-and-voice)
-6. [Pass 5: Accuracy and sourcing](#pass-5-accuracy-and-sourcing)
-7. [Pass 6: Reader validation](#pass-6-reader-validation)
-8. [Readability targets](#readability-targets)
-9. [Agent prompts](#agent-prompts)
+4. [Pass 3: Structure and engagement](#pass-3-structure-and-engagement)
+5. [Pass 4: Clarity and audience](#pass-4-clarity-and-audience)
+6. [Pass 5: Style and voice](#pass-5-style-and-voice)
+7. [Pass 6: Accuracy and sourcing](#pass-6-accuracy-and-sourcing)
+8. [Pass 7: Reader validation](#pass-7-reader-validation)
+9. [Readability targets](#readability-targets)
+10. [Agent prompts](#agent-prompts)
 
 ---
 
@@ -79,7 +80,67 @@ later passes.
 
 ---
 
-## Pass 3: Clarity and audience
+## Pass 3: Structure and engagement
+
+**Job:** Verify that the section's structure creates narrative momentum, that the
+reader feels motivated to learn each concept before the explanation arrives, and that
+sections connect through consequence or complication — not mere sequence. See
+`structure-and-flow.md` for the full framework.
+
+**The "therefore or but" diagnostic:**
+Write a one-sentence summary of each section. Connect consecutive summaries with
+"therefore," "but," or "and then." If most connections are "and then," the structure
+needs reorganizing — rearrange so each section naturally motivates or complicates the
+next.
+
+**Motivation checklist:**
+- [ ] The reader feels the **relevance** of the topic before the explanation begins —
+      through a concrete problem, a surprising fact, a scenario, or visible stakes
+- [ ] Motivation is **embedded in narrative**, not announced with meta-commentary
+      ("This is important because...", "Why should we care about...?",
+      "You might be wondering...")
+- [ ] The opening would **not reverse-engineer** to a visible template — it sounds
+      like a human who knows the topic chose where to begin, not like a formula was
+      applied
+
+**Engagement architecture checklist:**
+- [ ] The section opens with a **hook** — a surprising fact, micro-narrative,
+      counterintuitive statement, or information gap (1–3 sentences)
+- [ ] **Context and motivation** follow the hook naturally — why this matters, shown
+      through story or example, not stated directly
+- [ ] The **explanation** builds from concrete to abstract using Familiar → Bridge → New
+- [ ] At least one **worked example or concrete application** shows the concept in
+      action
+- [ ] The section ends with a **bridge** to the next section — through foreshadowing,
+      a new question, a callback, or a consequence
+
+**Connection checklist:**
+- [ ] **Callbacks** reference earlier concepts where relevant ("Remember when we
+      discussed X? Now imagine what happens when...")
+- [ ] **Running examples** evolve across sections where possible, gaining complexity
+      as understanding deepens
+- [ ] **Foreshadowing** hints at concepts that will be fully developed later, creating
+      anticipation without requiring understanding
+- [ ] **Transitions** between sections are thematic, not mechanical — no "Next, we'll
+      discuss..." or "Moving on to..."
+- [ ] Opening frameworks **vary** across consecutive sections — not three ABT openings
+      in a row
+
+**If the section fails:**
+- No felt motivation → rewrite the opening using one of the four motivation patterns
+  (problem-first, stakes-through-story, what-breaks-without-it, curiosity-first)
+- Meta-commentary motivation → delete the announcement and let the scenario/example
+  create the motivation directly
+- "And then" connections → rearrange sections so each flows from the previous through
+  consequence or complication
+- Missing callbacks → identify earlier concepts that connect and add explicit references
+- Missing bridge → add a forward-looking sentence that creates an information gap or
+  raises a question the next section addresses
+- Monotonous opening patterns → switch to a different framework (ABT → BLUF → SCQA)
+
+---
+
+## Pass 4: Clarity and audience
 
 **Job:** Ensure the content is comprehensible to the target audience and structurally
 sound.
@@ -105,7 +166,7 @@ sound.
 
 ---
 
-## Pass 4: Style and voice
+## Pass 5: Style and voice
 
 **Job:** Apply plain language, check rhythm, remove clichés, verify tone. See
 `voice-and-style.md` for the full rules and `anti-patterns.md` for cliché detection.
@@ -129,7 +190,7 @@ sound.
 
 ---
 
-## Pass 5: Accuracy and sourcing
+## Pass 6: Accuracy and sourcing
 
 **Job:** Verify every factual claim. See `analogies-and-accuracy.md` for the SIFT
 method and sourcing standards.
@@ -158,7 +219,7 @@ cut entirely.
 
 ---
 
-## Pass 6: Reader validation
+## Pass 7: Reader validation
 
 **Job:** Simulate a novice reader's experience. This is the final quality gate.
 
@@ -234,7 +295,31 @@ CONSTRAINTS: keep must-know to what's required to meet the outcome; everything
 else becomes optional.
 ```
 
-### Clarity editor (Pass 3)
+### Engagement reviewer (Pass 3)
+
+```
+ROLE: Structure and engagement reviewer
+TASK: For each section in the chapter:
+1) Identify the motivation strategy used in the opening. Classify it as:
+   problem-first, stakes-through-story, what-breaks-without-it, curiosity-first,
+   ABT, SCQA, BLUF, or meta-commentary.
+   Flag any that are meta-commentary ("Why should we care...",
+   "This is important because...", "You might be wondering...").
+2) Write a one-sentence summary of the section. Then connect consecutive
+   summaries with "therefore," "but," or "and then." Flag any "and then"
+   connections.
+3) Check for callbacks to earlier sections, foreshadowing of later sections,
+   and whether a bridge to the next section exists.
+4) Check that the reader would feel motivated to learn the concept BEFORE the
+   explanation begins — not told to care, but shown why it matters.
+OUTPUT:
+- motivation pattern for each section (with flags for meta-commentary)
+- section-to-section connection map (therefore / but / and then)
+- list of missing callbacks, bridges, or foreshadowing opportunities
+- specific rewrites for any meta-commentary openings
+```
+
+### Clarity editor (Pass 4)
 
 ```
 ROLE: Clarity editor
@@ -245,7 +330,7 @@ delete what is not needed.
 OUTPUT: revised opening + list of paragraphs changed and why.
 ```
 
-### Style and rhythm editor (Pass 4)
+### Style and rhythm editor (Pass 5)
 
 ```
 ROLE: Anti-cliché and rhythm editor
@@ -256,7 +341,7 @@ OUTPUT:
 - 5–10 sentence-level rewrites that vary rhythm (mix short and longer sentences)
 ```
 
-### Accuracy gatekeeper (Pass 5)
+### Accuracy gatekeeper (Pass 6)
 
 ```
 ROLE: Accuracy gatekeeper
@@ -271,7 +356,7 @@ Then:
 OUTPUT: a punch list of sentences that must be verified or rewritten.
 ```
 
-### Novice simulator (Pass 6)
+### Novice simulator (Pass 7)
 
 ```
 ROLE: Novice simulator
